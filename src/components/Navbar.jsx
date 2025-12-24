@@ -6,65 +6,65 @@ import { Menu, X, ChevronDown, User, LogIn } from "lucide-react";
 const aboutItems = [
   {
     title: "Who We Are",
-    href: "/about/who-we-are",
-    description: "Learn about our organization and mission"
+    href: "/about-us#who-we-are",
+    description: "Learn about our organization and mission",
   },
-  {
+    {
     title: "Mission & Vision",
-    href: "/about/mission-vision",
-    description: "Our goals and aspirations"
+    href: "/about-us#mission-vision",
+    description: "Our goals and aspirations",
   },
   {
     title: "Our Values",
-    href: "/about/values",
-    description: "Principles that guide us"
+    href: "/about-us#value-section",
+    description: "Principles that guide us",
   },
   {
     title: "History",
-    href: "/about/history",
-    description: "Our journey and milestones"
+    href: "/about-us#history",
+    description: "Our journey and milestones",
   },
   {
     title: "Achievements",
-    href: "/about/achievements",
-    description: "Recognition and accomplishments"
-  }
+    href: "/about-us#achievements",
+    description: "Recognition and accomplishments",
+  },
 ];
 
 const leadershipItems = [
   {
     title: "Executive Committee",
-    href: "/leadership/executive",
-    description: "Meet our leadership team"
+    href: "/leadership",
+    description: "Meet our leadership team",
   },
   {
     title: "Advisory Board",
     href: "/leadership/advisory",
-    description: "Our trusted advisors"
+    description: "Our trusted advisors",
   },
   {
     title: "Department Heads",
     href: "/leadership/departments",
-    description: "Department coordinators"
+    description: "Department coordinators",
   },
   {
     title: "All Members",
     href: "/leadership",
-    description: "View complete member directory"
-  }
+    description: "View complete member directory",
+  },
 ];
 
 const joinItems = [
   {
     title: "Why Join BISF",
     href: "/join/why",
-    description: "Benefits of membership"
+    description: "Benefits of membership",
   },
   {
     title: "Apply Now",
     href: "/join/apply",
-    description: "Start your application"
-  }
+    description: "Start your application",
+  },
 ];
 
 export function Navbar() {
@@ -77,32 +77,32 @@ export function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when clicking outside
+  // Close dropdown when clicking outside
   React.useEffect(() => {
     const handleClickOutside = (e) => {
-      if (mobileMenuOpen && !e.target.closest('.mobile-menu')) {
+      if (activeDropdown && !e.target.closest(".dropdown-container")) {
+        setActiveDropdown(null);
+      }
+      if (mobileMenuOpen && !e.target.closest(".mobile-menu")) {
         setMobileMenuOpen(false);
       }
     };
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
-  }, [mobileMenuOpen]);
-
-  const toggleDropdown = (name) => {
-    setActiveDropdown(activeDropdown === name ? null : name);
-  };
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [activeDropdown, mobileMenuOpen]);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-white shadow-md" : "bg-white/95 backdrop-blur-sm"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
@@ -110,13 +110,14 @@ export function Navbar() {
             </div>
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold text-gray-900">BISF</h1>
-              <p className="text-xs text-gray-600">Intellectual Students Forum</p>
+              <p className="text-xs text-gray-600">
+                Intellectual Students Forum
+              </p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
-            
             {/* Home */}
             <Link
               to="/"
@@ -196,7 +197,6 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg mobile-menu">
           <div className="px-4 py-3 space-y-1 max-h-[calc(100vh-4rem)] overflow-y-auto">
-            
             <MobileLink to="/" onClick={() => setMobileMenuOpen(false)}>
               Home
             </MobileLink>
@@ -205,7 +205,7 @@ export function Navbar() {
               title="About"
               items={aboutItems}
               activeDropdown={activeDropdown}
-              toggleDropdown={toggleDropdown}
+              setActiveDropdown={setActiveDropdown}
               setMobileMenuOpen={setMobileMenuOpen}
             />
 
@@ -213,7 +213,7 @@ export function Navbar() {
               title="Leadership"
               items={leadershipItems}
               activeDropdown={activeDropdown}
-              toggleDropdown={toggleDropdown}
+              setActiveDropdown={setActiveDropdown}
               setMobileMenuOpen={setMobileMenuOpen}
             />
 
@@ -221,7 +221,7 @@ export function Navbar() {
               title="Join Us"
               items={joinItems}
               activeDropdown={activeDropdown}
-              toggleDropdown={toggleDropdown}
+              setActiveDropdown={setActiveDropdown}
               setMobileMenuOpen={setMobileMenuOpen}
             />
 
@@ -257,21 +257,27 @@ export function Navbar() {
 function DropdownMenu({ title, items, activeDropdown, setActiveDropdown }) {
   const isActive = activeDropdown === title;
 
+  const handleClick = (e) => {
+    e.stopPropagation();
+    setActiveDropdown(isActive ? null : title);
+  };
+
   return (
-    <div
-      className="relative"
-      onMouseEnter={() => setActiveDropdown(title)}
-      onMouseLeave={() => setActiveDropdown(null)}
-    >
+    <div className="relative dropdown-container">
       <button
+        onClick={handleClick}
         className={`flex items-center space-x-1 px-4 py-2 rounded-lg transition-all font-medium ${
           isActive
-            ? 'text-blue-600 bg-blue-50'
-            : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+            ? "text-blue-600 bg-blue-50"
+            : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
         }`}
       >
         <span>{title}</span>
-        <ChevronDown className={`w-4 h-4 transition-transform ${isActive ? 'rotate-180' : ''}`} />
+        <ChevronDown
+          className={`w-4 h-4 transition-transform ${
+            isActive ? "rotate-180" : ""
+          }`}
+        />
       </button>
 
       {isActive && (
@@ -313,18 +319,30 @@ function MobileLink({ to, onClick, children }) {
 }
 
 // Mobile Dropdown Component
-function MobileDropdown({ title, items, activeDropdown, toggleDropdown, setMobileMenuOpen }) {
+function MobileDropdown({
+  title,
+  items,
+  activeDropdown,
+  setActiveDropdown,
+  setMobileMenuOpen,
+}) {
   const isActive = activeDropdown === title;
+
+  const toggleDropdown = () => {
+    setActiveDropdown(isActive ? null : title);
+  };
 
   return (
     <div className="space-y-1">
       <button
-        onClick={() => toggleDropdown(title)}
+        onClick={toggleDropdown}
         className="flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-all font-medium"
       >
         <span>{title}</span>
         <ChevronDown
-          className={`w-4 h-4 transition-transform ${isActive ? 'rotate-180' : ''}`}
+          className={`w-4 h-4 transition-transform ${
+            isActive ? "rotate-180" : ""
+          }`}
         />
       </button>
 
@@ -335,14 +353,16 @@ function MobileDropdown({ title, items, activeDropdown, toggleDropdown, setMobil
               key={index}
               to={item.href}
               onClick={() => {
-                toggleDropdown(null);
+                setActiveDropdown(null);
                 setMobileMenuOpen(false);
               }}
               className="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
             >
               <div className="font-medium">{item.title}</div>
               {item.description && (
-                <div className="text-xs text-gray-500 mt-0.5">{item.description}</div>
+                <div className="text-xs text-gray-500 mt-0.5">
+                  {item.description}
+                </div>
               )}
             </Link>
           ))}
