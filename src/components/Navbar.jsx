@@ -1,0 +1,353 @@
+import * as React from "react";
+import { Link } from "react-router-dom";
+import { Menu, X, ChevronDown, User, LogIn } from "lucide-react";
+
+// Navigation data
+const aboutItems = [
+  {
+    title: "Who We Are",
+    href: "/about/who-we-are",
+    description: "Learn about our organization and mission"
+  },
+  {
+    title: "Mission & Vision",
+    href: "/about/mission-vision",
+    description: "Our goals and aspirations"
+  },
+  {
+    title: "Our Values",
+    href: "/about/values",
+    description: "Principles that guide us"
+  },
+  {
+    title: "History",
+    href: "/about/history",
+    description: "Our journey and milestones"
+  },
+  {
+    title: "Achievements",
+    href: "/about/achievements",
+    description: "Recognition and accomplishments"
+  }
+];
+
+const leadershipItems = [
+  {
+    title: "Executive Committee",
+    href: "/leadership/executive",
+    description: "Meet our leadership team"
+  },
+  {
+    title: "Advisory Board",
+    href: "/leadership/advisory",
+    description: "Our trusted advisors"
+  },
+  {
+    title: "Department Heads",
+    href: "/leadership/departments",
+    description: "Department coordinators"
+  },
+  {
+    title: "All Members",
+    href: "/leadership",
+    description: "View complete member directory"
+  }
+];
+
+const joinItems = [
+  {
+    title: "Why Join BISF",
+    href: "/join/why",
+    description: "Benefits of membership"
+  },
+  {
+    title: "Apply Now",
+    href: "/join/apply",
+    description: "Start your application"
+  }
+];
+
+export function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [activeDropdown, setActiveDropdown] = React.useState(null);
+  const [scrolled, setScrolled] = React.useState(false);
+
+  // Handle scroll effect
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close mobile menu when clicking outside
+  React.useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (mobileMenuOpen && !e.target.closest('.mobile-menu')) {
+        setMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [mobileMenuOpen]);
+
+  const toggleDropdown = (name) => {
+    setActiveDropdown(activeDropdown === name ? null : name);
+  };
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
+    }`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+              <span className="text-white font-bold text-xl">B</span>
+            </div>
+            <div className="hidden sm:block">
+              <h1 className="text-xl font-bold text-gray-900">BISF</h1>
+              <p className="text-xs text-gray-600">Intellectual Students Forum</p>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-1">
+            
+            {/* Home */}
+            <Link
+              to="/"
+              className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all font-medium"
+            >
+              Home
+            </Link>
+
+            {/* About Dropdown */}
+            <DropdownMenu
+              title="About"
+              items={aboutItems}
+              activeDropdown={activeDropdown}
+              setActiveDropdown={setActiveDropdown}
+            />
+
+            {/* Leadership Dropdown */}
+            <DropdownMenu
+              title="Leadership"
+              items={leadershipItems}
+              activeDropdown={activeDropdown}
+              setActiveDropdown={setActiveDropdown}
+            />
+
+            {/* Join Us Dropdown */}
+            <DropdownMenu
+              title="Join Us"
+              items={joinItems}
+              activeDropdown={activeDropdown}
+              setActiveDropdown={setActiveDropdown}
+            />
+
+            {/* Contact */}
+            <Link
+              to="/contact"
+              className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all font-medium"
+            >
+              Contact
+            </Link>
+          </div>
+
+          {/* Right Side Actions */}
+          <div className="hidden lg:flex items-center space-x-3">
+            <Link
+              to="/admin/login"
+              className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+            >
+              <LogIn className="w-4 h-4" />
+              <span className="font-medium">Login</span>
+            </Link>
+            <Link
+              to="/join/apply"
+              className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg font-medium"
+            >
+              Join Now
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setMobileMenuOpen(!mobileMenuOpen);
+            }}
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors mobile-menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6 text-gray-700" />
+            ) : (
+              <Menu className="w-6 h-6 text-gray-700" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg mobile-menu">
+          <div className="px-4 py-3 space-y-1 max-h-[calc(100vh-4rem)] overflow-y-auto">
+            
+            <MobileLink to="/" onClick={() => setMobileMenuOpen(false)}>
+              Home
+            </MobileLink>
+
+            <MobileDropdown
+              title="About"
+              items={aboutItems}
+              activeDropdown={activeDropdown}
+              toggleDropdown={toggleDropdown}
+              setMobileMenuOpen={setMobileMenuOpen}
+            />
+
+            <MobileDropdown
+              title="Leadership"
+              items={leadershipItems}
+              activeDropdown={activeDropdown}
+              toggleDropdown={toggleDropdown}
+              setMobileMenuOpen={setMobileMenuOpen}
+            />
+
+            <MobileDropdown
+              title="Join Us"
+              items={joinItems}
+              activeDropdown={activeDropdown}
+              toggleDropdown={toggleDropdown}
+              setMobileMenuOpen={setMobileMenuOpen}
+            />
+
+            <MobileLink to="/contact" onClick={() => setMobileMenuOpen(false)}>
+              Contact
+            </MobileLink>
+
+            <div className="pt-3 mt-3 border-t border-gray-200 space-y-2">
+              <Link
+                to="/admin/login"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center space-x-2 px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-all"
+              >
+                <LogIn className="w-5 h-5" />
+                <span className="font-medium">Admin Login</span>
+              </Link>
+              <Link
+                to="/join/apply"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-medium shadow-md"
+              >
+                Join BISF Now
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+}
+
+// Desktop Dropdown Component
+function DropdownMenu({ title, items, activeDropdown, setActiveDropdown }) {
+  const isActive = activeDropdown === title;
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setActiveDropdown(title)}
+      onMouseLeave={() => setActiveDropdown(null)}
+    >
+      <button
+        className={`flex items-center space-x-1 px-4 py-2 rounded-lg transition-all font-medium ${
+          isActive
+            ? 'text-blue-600 bg-blue-50'
+            : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+        }`}
+      >
+        <span>{title}</span>
+        <ChevronDown className={`w-4 h-4 transition-transform ${isActive ? 'rotate-180' : ''}`} />
+      </button>
+
+      {isActive && (
+        <div className="absolute top-full left-0 mt-1 w-72 bg-white rounded-lg shadow-xl border border-gray-100 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+          {items.map((item, index) => (
+            <Link
+              key={index}
+              to={item.href}
+              className="block px-4 py-3 hover:bg-blue-50 transition-colors group"
+              onClick={() => setActiveDropdown(null)}
+            >
+              <div className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
+                {item.title}
+              </div>
+              {item.description && (
+                <div className="text-sm text-gray-500 mt-0.5">
+                  {item.description}
+                </div>
+              )}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Mobile Link Component
+function MobileLink({ to, onClick, children }) {
+  return (
+    <Link
+      to={to}
+      onClick={onClick}
+      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-all font-medium"
+    >
+      {children}
+    </Link>
+  );
+}
+
+// Mobile Dropdown Component
+function MobileDropdown({ title, items, activeDropdown, toggleDropdown, setMobileMenuOpen }) {
+  const isActive = activeDropdown === title;
+
+  return (
+    <div className="space-y-1">
+      <button
+        onClick={() => toggleDropdown(title)}
+        className="flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-all font-medium"
+      >
+        <span>{title}</span>
+        <ChevronDown
+          className={`w-4 h-4 transition-transform ${isActive ? 'rotate-180' : ''}`}
+        />
+      </button>
+
+      {isActive && (
+        <div className="ml-4 space-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
+          {items.map((item, index) => (
+            <Link
+              key={index}
+              to={item.href}
+              onClick={() => {
+                toggleDropdown(null);
+                setMobileMenuOpen(false);
+              }}
+              className="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+            >
+              <div className="font-medium">{item.title}</div>
+              {item.description && (
+                <div className="text-xs text-gray-500 mt-0.5">{item.description}</div>
+              )}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
