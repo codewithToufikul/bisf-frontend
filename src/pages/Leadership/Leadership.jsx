@@ -32,12 +32,12 @@ export default function LeadershipPage() {
       category: "Executive Committee",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=800&fit=crop",
-      shortBio: "Leading BISF with vision and dedication",
+      shortBio: "Leading BILF with vision and dedication",
       fullBio:
-        "Dr. Ahmed Rahman is a distinguished academic and student leader with over 5 years of experience in educational development. He has been instrumental in shaping BISF into what it is today.",
+        "Dr. Ahmed Rahman is a distinguished academic and student leader with over 5 years of experience in educational development. He has been instrumental in shaping BILF into what it is today.",
       education: "PhD in Computer Science, University of Dhaka",
       university: "University of Dhaka",
-      email: "ahmed.rahman@bisf.org",
+      email: "ahmed.rahman@bilf.org",
       phone: "+880 1XXX-XXXXXX",
       linkedin: "#",
       facebook: "#",
@@ -59,10 +59,10 @@ export default function LeadershipPage() {
         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=800&fit=crop",
       shortBio: "Driving innovation and student engagement",
       fullBio:
-        "Fatima Khatun is a passionate advocate for student rights and educational excellence. She has pioneered several innovative programs at BISF.",
+        "Fatima Khatun is a passionate advocate for student rights and educational excellence. She has pioneered several innovative programs at BILF.",
       education: "Masters in Business Administration, BUET",
       university: "BUET",
-      email: "fatima.khatun@bisf.org",
+      email: "fatima.khatun@bilf.org",
       phone: "+880 1XXX-XXXXXX",
       linkedin: "#",
       facebook: "#",
@@ -84,10 +84,10 @@ export default function LeadershipPage() {
         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=800&fit=crop",
       shortBio: "Managing operations with excellence",
       fullBio:
-        "Kamal Hossain ensures smooth operations and coordination across all BISF activities. His organizational skills have been crucial to our success.",
+        "Kamal Hossain ensures smooth operations and coordination across all BILF activities. His organizational skills have been crucial to our success.",
       education: "Bachelor in Engineering, BUET",
       university: "BUET",
-      email: "kamal.hossain@bisf.org",
+      email: "kamal.hossain@bilf.org",
       phone: "+880 1XXX-XXXXXX",
       linkedin: "#",
       facebook: "#",
@@ -108,10 +108,10 @@ export default function LeadershipPage() {
         "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=800&fit=crop",
       shortBio: "Ensuring financial sustainability",
       fullBio:
-        "Nusrat Jahan manages BISF's finances with transparency and strategic planning, ensuring sustainable growth and resource optimization.",
+        "Nusrat Jahan manages BILF's finances with transparency and strategic planning, ensuring sustainable growth and resource optimization.",
       education: "MBA in Finance, University of Dhaka",
       university: "University of Dhaka",
-      email: "nusrat.jahan@bisf.org",
+      email: "nusrat.jahan@bilf.org",
       phone: "+880 1XXX-XXXXXX",
       linkedin: "#",
       facebook: "#",
@@ -132,10 +132,10 @@ export default function LeadershipPage() {
         "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=800&fit=crop",
       shortBio: "Building our brand and outreach",
       fullBio:
-        "Tariq Rahman leads our communication strategies, ensuring BISF's message reaches students across Bangladesh effectively.",
+        "Tariq Rahman leads our communication strategies, ensuring BILF's message reaches students across Bangladesh effectively.",
       education: "Masters in Mass Communication, DU",
       university: "University of Dhaka",
-      email: "tariq.rahman@bisf.org",
+      email: "tariq.rahman@bilf.org",
       phone: "+880 1XXX-XXXXXX",
       linkedin: "#",
       facebook: "#",
@@ -156,10 +156,10 @@ export default function LeadershipPage() {
         "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=800&fit=crop",
       shortBio: "Creating memorable experiences",
       fullBio:
-        "Sabrina Islam brings creativity and precision to every BISF event, making each one a memorable experience for participants.",
+        "Sabrina Islam brings creativity and precision to every BILF event, making each one a memorable experience for participants.",
       education: "Bachelor in Business Administration, NSU",
       university: "North South University",
-      email: "sabrina.islam@bisf.org",
+      email: "sabrina.islam@bilf.org",
       phone: "+880 1XXX-XXXXXX",
       linkedin: "#",
       facebook: "#",
@@ -180,10 +180,10 @@ export default function LeadershipPage() {
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=800&fit=crop",
       shortBio: "Guiding with wisdom and experience",
       fullBio:
-        "Prof. Dr. Mahmud Khan brings decades of academic excellence and leadership experience to guide BISF's strategic direction.",
+        "Prof. Dr. Mahmud Khan brings decades of academic excellence and leadership experience to guide BILF's strategic direction.",
       education: "PhD in Educational Leadership, Oxford University",
       university: "University of Dhaka (Current)",
-      email: "mahmud.khan@bisf.org",
+      email: "mahmud.khan@bilf.org",
       phone: "+880 1XXX-XXXXXX",
       linkedin: "#",
       facebook: "#",
@@ -205,10 +205,10 @@ export default function LeadershipPage() {
         "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&h=800&fit=crop",
       shortBio: "Connecting with student perspectives",
       fullBio:
-        "Ayesha Siddiqua ensures BISF stays connected with student needs and perspectives, bridging generations of leadership.",
+        "Ayesha Siddiqua ensures BILF stays connected with student needs and perspectives, bridging generations of leadership.",
       education: "Masters in Psychology, Jahangirnagar University",
       university: "Jahangirnagar University",
-      email: "ayesha.siddiqua@bisf.org",
+      email: "ayesha.siddiqua@bilf.org",
       phone: "+880 1XXX-XXXXXX",
       linkedin: "#",
       facebook: "#",
@@ -249,7 +249,7 @@ export default function LeadershipPage() {
               Our Leadership Team
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Meet the dedicated individuals who guide and inspire BISF's mission
+              Meet the dedicated individuals who guide and inspire BILF's mission
               to empower students across Bangladesh
             </p>
           </div>
@@ -348,7 +348,7 @@ export default function LeadershipPage() {
             Want to Join Our Leadership Team?
           </h2>
           <p className="text-xl mb-8 text-blue-100">
-            We're always looking for passionate individuals to help lead BISF
+            We're always looking for passionate individuals to help lead BILF
             forward
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

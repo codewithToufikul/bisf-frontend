@@ -1,12 +1,12 @@
 import React from "react";
 import {
-      Mail,
-      Phone,
-      MapPin,
-      Facebook,
-      Linkedin,
-      Twitter,
-      Instagram,
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Linkedin,
+  Twitter,
+  Instagram,
 } from "lucide-react"
 
 const Footer = () => {
@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">BISF</h3>
+            <h3 className="text-xl font-bold mb-4">BILF</h3>
             <p className="text-gray-400 mb-4">
               Bangladesh Intellectual Students Forum - Empowering minds since
               2020
@@ -114,7 +114,7 @@ const Footer = () => {
             <ul className="space-y-3 text-gray-400">
               <li className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span>info@bisf.org</span>
+                <span>info@bilf.org</span>
               </li>
               <li className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 mt-0.5 flex-shrink-0" />

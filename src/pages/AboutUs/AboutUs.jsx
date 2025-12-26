@@ -42,7 +42,7 @@ export default function AboutUs() {
       year: "2020",
       title: "Foundation",
       description:
-        "BISF was established by a group of visionary students with a dream to create an intellectual community",
+        "BILF was established by a group of visionary students with a dream to create an intellectual community",
       milestone: "Organization Founded",
     },
     {
@@ -77,7 +77,7 @@ export default function AboutUs() {
       year: "2025",
       title: "Innovation Hub",
       description:
-        "Launched BISF Innovation Hub for research and development projects",
+        "Launched BILF Innovation Hub for research and development projects",
       milestone: "Innovation Center",
     },
   ];
@@ -201,7 +201,7 @@ export default function AboutUs() {
           <div className="text-center">
             <div className="inline-block mb-4">
               <span className="px-4 py-2 bg-blue-700/50 rounded-full text-sm font-medium backdrop-blur-sm">
-                About BISF
+                About BILF
               </span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Who We Are</h1>
@@ -237,7 +237,7 @@ export default function AboutUs() {
               </h2>
               <div className="space-y-4 text-lg text-gray-600">
                 <p>
-                  The Bangladesh Intellectual Students Forum (BISF) was
+                  The Bangladesh Intellectual Leaders Forum (BILF) was
                   established in 2020 with a singular vision: to create a
                   platform where the brightest minds of Bangladesh's student
                   community could come together to learn, grow, and make a
@@ -251,7 +251,7 @@ export default function AboutUs() {
                   society.
                 </p>
                 <p>
-                  Today, BISF stands as one of Bangladesh's premier student
+                  Today, BILF stands as one of Bangladesh's premier student
                   organizations, with over 500 active members from 15+
                   universities, united by a shared commitment to excellence and
                   positive change.
@@ -444,9 +444,8 @@ export default function AboutUs() {
               {timeline.map((item, index) => (
                 <div
                   key={index}
-                  className={`relative grid md:grid-cols-2 gap-8 items-center ${
-                    index % 2 === 0 ? "" : "md:flex-row-reverse"
-                  }`}
+                  className={`relative grid md:grid-cols-2 gap-8 items-center ${index % 2 === 0 ? "" : "md:flex-row-reverse"
+                    }`}
                 >
                   {index % 2 === 0 ? (
                     <>
@@ -606,7 +605,7 @@ export default function AboutUs() {
             Want to Be Part of Our Story?
           </h2>
           <p className="text-xl mb-8 text-blue-100">
-            Join BISF and contribute to shaping the future of student leadership
+            Join BILF and contribute to shaping the future of student leadership
             in Bangladesh
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

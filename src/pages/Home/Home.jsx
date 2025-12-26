@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { 
-  ArrowRight, 
-  Users, 
-  Award, 
-  Target, 
-  BookOpen, 
+import {
+  ArrowRight,
+  Users,
+  Award,
+  Target,
+  BookOpen,
   TrendingUp,
   Calendar,
   ChevronRight
@@ -103,7 +103,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white overflow-hidden">
         {/* Background Pattern */}
@@ -122,7 +122,7 @@ export default function Home() {
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Bangladesh Intellectual Students Forum
+                Bangladesh Intellectual Leaders Forum
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-blue-100">
                 Empowering minds, shaping futures, and building a community of excellence
@@ -132,7 +132,7 @@ export default function Home() {
                   href="/join/apply"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-900 rounded-lg hover:bg-blue-50 transition-all font-bold shadow-xl hover:shadow-2xl group"
                 >
-                  Join BISF Today
+                  Join BILF Today
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
@@ -217,13 +217,13 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-block mb-4">
-                <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">About BISF</span>
+                <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">About BILF</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Fostering Excellence in Academia and Beyond
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                The Bangladesh Intellectual Students Forum (BISF) is a premier organization dedicated to nurturing intellectual growth, academic excellence, and leadership development among students across Bangladesh.
+                The Bangladesh Intellectual Leaders Forum (BILF) is a premier organization dedicated to nurturing intellectual growth, academic excellence, and leadership development among students across Bangladesh.
               </p>
               <p className="text-lg text-gray-600 mb-8">
                 Since our establishment in 2020, we have been committed to creating a vibrant community where bright minds come together to share knowledge, inspire innovation, and drive positive change in society.
@@ -313,7 +313,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">Benefits</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
-              Why Join BISF?
+              Why Join BILF?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Discover the advantages of being part of Bangladesh's premier intellectual community

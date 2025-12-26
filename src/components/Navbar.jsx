@@ -9,7 +9,7 @@ const aboutItems = [
     href: "/about-us#who-we-are",
     description: "Learn about our organization and mission",
   },
-    {
+  {
     title: "Mission & Vision",
     href: "/about-us#mission-vision",
     description: "Our goals and aspirations",
@@ -56,7 +56,7 @@ const leadershipItems = [
 
 const joinItems = [
   {
-    title: "Why Join BISF",
+    title: "Why Join BILF",
     href: "/join/why",
     description: "Benefits of membership",
   },
@@ -97,9 +97,8 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md" : "bg-white/95 backdrop-blur-sm"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-white/95 backdrop-blur-sm"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -109,7 +108,7 @@ export function Navbar() {
               <span className="text-white font-bold text-xl">B</span>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-gray-900">BISF</h1>
+              <h1 className="text-xl font-bold text-gray-900">BILF</h1>
               <p className="text-xs text-gray-600">
                 Intellectual Students Forum
               </p>
@@ -243,7 +242,7 @@ export function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-medium shadow-md"
               >
-                Join BISF Now
+                Join BILF Now
               </Link>
             </div>
           </div>
@@ -266,17 +265,15 @@ function DropdownMenu({ title, items, activeDropdown, setActiveDropdown }) {
     <div className="relative dropdown-container">
       <button
         onClick={handleClick}
-        className={`flex items-center space-x-1 px-4 py-2 rounded-lg transition-all font-medium ${
-          isActive
+        className={`flex items-center space-x-1 px-4 py-2 rounded-lg transition-all font-medium ${isActive
             ? "text-blue-600 bg-blue-50"
             : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
-        }`}
+          }`}
       >
         <span>{title}</span>
         <ChevronDown
-          className={`w-4 h-4 transition-transform ${
-            isActive ? "rotate-180" : ""
-          }`}
+          className={`w-4 h-4 transition-transform ${isActive ? "rotate-180" : ""
+            }`}
         />
       </button>
 
@@ -340,9 +337,8 @@ function MobileDropdown({
       >
         <span>{title}</span>
         <ChevronDown
-          className={`w-4 h-4 transition-transform ${
-            isActive ? "rotate-180" : ""
-          }`}
+          className={`w-4 h-4 transition-transform ${isActive ? "rotate-180" : ""
+            }`}
         />
       </button>
 
