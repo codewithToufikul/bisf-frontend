@@ -13,9 +13,6 @@ import {
   Calendar,
   Trophy,
   GraduationCap,
-  MapPin,
-  Mail,
-  Phone,
 } from "lucide-react";
 import { useEffect } from "react";
 import { useLocation } from "react-router";
@@ -23,7 +20,6 @@ import { useLocation } from "react-router";
 export default function AboutUs() {
   const location = useLocation();
 
-  // Auto scroll to section when page loads
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace("#", "");
@@ -36,7 +32,6 @@ export default function AboutUs() {
     }
   }, [location]);
 
-  // Timeline data
   const timeline = [
     {
       year: "2020",
@@ -82,53 +77,45 @@ export default function AboutUs() {
     },
   ];
 
-  // Core values
   const values = [
     {
       icon: Lightbulb,
       title: "Innovation",
       description:
         "We encourage creative thinking and innovative solutions to academic and social challenges",
-      color: "from-yellow-500 to-orange-500",
     },
     {
       icon: Heart,
       title: "Integrity",
       description:
         "We uphold the highest standards of honesty, ethics, and transparency in all our activities",
-      color: "from-red-500 to-pink-500",
     },
     {
       icon: Users,
       title: "Collaboration",
       description:
         "We believe in the power of teamwork and collective effort to achieve greater goals",
-      color: "from-blue-500 to-cyan-500",
     },
     {
       icon: TrendingUp,
       title: "Excellence",
       description:
         "We strive for excellence in everything we do, continuously raising our standards",
-      color: "from-green-500 to-emerald-500",
     },
     {
       icon: Globe,
       title: "Inclusivity",
       description:
         "We embrace diversity and create an inclusive environment where everyone belongs",
-      color: "from-purple-500 to-indigo-500",
     },
     {
       icon: Shield,
       title: "Responsibility",
       description:
         "We take ownership of our actions and their impact on our community and society",
-      color: "from-gray-700 to-gray-900",
     },
   ];
 
-  // Achievements
   const achievements = [
     {
       icon: Trophy,
@@ -156,7 +143,6 @@ export default function AboutUs() {
     },
   ];
 
-  // Team structure
   const departments = [
     {
       name: "Executive Board",
@@ -185,10 +171,10 @@ export default function AboutUs() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-950">
       {/* Hero Section */}
-      <section id="who-we-are" className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <section id="who-we-are" className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-40 overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
           <div
             className="absolute inset-0"
             style={{
@@ -197,15 +183,17 @@ export default function AboutUs() {
           ></div>
         </div>
 
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/50 to-gray-900"></div>
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="inline-block mb-4">
-              <span className="px-4 py-2 bg-blue-700/50 rounded-full text-sm font-medium backdrop-blur-sm">
+              <span className="px-4 py-2 bg-gray-800/80 border border-gray-700 rounded-full text-sm font-medium backdrop-blur-sm">
                 About BILF
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Who We Are</h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">Who We Are</h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
               A community of intellectual minds dedicated to academic
               excellence, leadership development, and positive social impact
             </p>
@@ -219,7 +207,7 @@ export default function AboutUs() {
             className="w-full"
           >
             <path
-              fill="#ffffff"
+              fill="#030712"
               fillOpacity="1"
               d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"
             ></path>
@@ -228,14 +216,14 @@ export default function AboutUs() {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">
                 Building a Community of Excellence
               </h2>
-              <div className="space-y-4 text-lg text-gray-600">
+              <div className="space-y-4 text-base sm:text-lg text-gray-400">
                 <p>
                   The Bangladesh Intellectual Leaders Forum (BILF) was
                   established in 2020 with a singular vision: to create a
@@ -259,30 +247,30 @@ export default function AboutUs() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
-                <div className="text-4xl font-bold text-blue-600 mb-2">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="bg-gray-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-800">
+                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">
                   500+
                 </div>
-                <div className="text-gray-700 font-medium">Active Members</div>
+                <div className="text-xs sm:text-sm text-gray-400 font-medium">Active Members</div>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 border border-green-200">
-                <div className="text-4xl font-bold text-green-600 mb-2">
+              <div className="bg-gray-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-800">
+                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">
                   15+
                 </div>
-                <div className="text-gray-700 font-medium">Universities</div>
+                <div className="text-xs sm:text-sm text-gray-400 font-medium">Universities</div>
               </div>
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 border border-purple-200">
-                <div className="text-4xl font-bold text-purple-600 mb-2">
+              <div className="bg-gray-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-800">
+                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">
                   50+
                 </div>
-                <div className="text-gray-700 font-medium">Events Yearly</div>
+                <div className="text-xs sm:text-sm text-gray-400 font-medium">Events Yearly</div>
               </div>
-              <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 border border-orange-200">
-                <div className="text-4xl font-bold text-orange-600 mb-2">
+              <div className="bg-gray-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-800">
+                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">
                   20+
                 </div>
-                <div className="text-gray-700 font-medium">Awards Won</div>
+                <div className="text-xs sm:text-sm text-gray-400 font-medium">Awards Won</div>
               </div>
             </div>
           </div>
@@ -290,18 +278,18 @@ export default function AboutUs() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section id="mission-vision" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section id="mission-vision" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-900 to-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             {/* Mission */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
-                <Target className="w-8 h-8 text-white" />
+            <div className="bg-gray-950 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-800">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                <Target className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
                 Our Mission
               </h3>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-base sm:text-lg text-gray-400 mb-4 sm:mb-6">
                 To empower students through knowledge sharing, skill
                 development, and leadership opportunities, creating a vibrant
                 intellectual community that drives positive change in Bangladesh
@@ -309,26 +297,26 @@ export default function AboutUs() {
               </p>
               <div className="space-y-3">
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-sm sm:text-base text-gray-400">
                     Foster academic excellence and intellectual growth
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-sm sm:text-base text-gray-400">
                     Develop future leaders and change-makers
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-sm sm:text-base text-gray-400">
                     Build bridges between universities and communities
                   </p>
                 </div>
@@ -336,14 +324,14 @@ export default function AboutUs() {
             </div>
 
             {/* Vision */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6">
-                <Eye className="w-8 h-8 text-white" />
+            <div className="bg-gray-950 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-800">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                <Eye className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
                 Our Vision
               </h3>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-base sm:text-lg text-gray-400 mb-4 sm:mb-6">
                 To be Bangladesh's leading intellectual platform, recognized
                 nationally and internationally for nurturing brilliant minds,
                 fostering innovation, and contributing to society's advancement
@@ -351,26 +339,26 @@ export default function AboutUs() {
               </p>
               <div className="space-y-3">
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-sm sm:text-base text-gray-400">
                     Create lasting impact on Bangladesh's education landscape
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-sm sm:text-base text-gray-400">
                     Establish global partnerships and collaborations
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-sm sm:text-base text-gray-400">
                     Be the catalyst for student-driven social innovation
                   </p>
                 </div>
@@ -381,38 +369,36 @@ export default function AboutUs() {
       </section>
 
       {/* Core Values Section */}
-      <section id="value-section" className="py-20">
+      <section id="value-section" className="py-12 sm:py-16 lg:py-20 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">
+          <div className="text-center mb-8 sm:mb-12">
+            <span className="text-gray-400 font-semibold text-xs sm:text-sm uppercase tracking-wide">
               Our Values
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mt-2 mb-3 sm:mb-4">
               Principles That Guide Us
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto">
               These core values shape our culture, guide our decisions, and
               define who we are as an organization
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 group"
+                  className="bg-gray-900 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-800 hover:border-gray-700"
                 >
-                  <div
-                    className={`w-14 h-14 bg-gradient-to-br ${value.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
-                  >
-                    <Icon className="w-7 h-7 text-white" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-800 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+                    <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3">
                     {value.title}
                   </h3>
-                  <p className="text-gray-600">{value.description}</p>
+                  <p className="text-xs sm:text-sm text-gray-400">{value.description}</p>
                 </div>
               );
             })}
@@ -421,16 +407,16 @@ export default function AboutUs() {
       </section>
 
       {/* Timeline Section */}
-      <section id="history" className="py-20 bg-gray-50">
+      <section id="history" className="py-12 sm:py-16 lg:py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">
+          <div className="text-center mb-8 sm:mb-12">
+            <span className="text-gray-400 font-semibold text-xs sm:text-sm uppercase tracking-wide">
               Our Journey
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mt-2 mb-3 sm:mb-4">
               History & Milestones
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto">
               From our humble beginnings to becoming a leading student
               organization
             </p>
@@ -438,36 +424,36 @@ export default function AboutUs() {
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-600 via-blue-400 to-blue-600"></div>
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-gray-700 via-gray-600 to-gray-700"></div>
 
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-12">
               {timeline.map((item, index) => (
                 <div
                   key={index}
-                  className={`relative grid md:grid-cols-2 gap-8 items-center ${index % 2 === 0 ? "" : "md:flex-row-reverse"
+                  className={`relative grid md:grid-cols-2 gap-4 sm:gap-8 items-center ${index % 2 === 0 ? "" : "md:flex-row-reverse"
                     }`}
                 >
                   {index % 2 === 0 ? (
                     <>
                       {/* Content Left */}
                       <div className="md:text-right">
-                        <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 inline-block">
-                          <div className="text-3xl font-bold text-blue-600 mb-2">
+                        <div className="bg-gray-950 rounded-xl p-4 sm:p-6 shadow-lg border border-gray-800 inline-block">
+                          <div className="text-2xl sm:text-3xl font-bold text-white mb-2">
                             {item.year}
                           </div>
-                          <h3 className="text-xl font-bold text-gray-900 mb-2">
+                          <h3 className="text-base sm:text-xl font-bold text-white mb-2">
                             {item.title}
                           </h3>
-                          <p className="text-gray-600 mb-3">
+                          <p className="text-xs sm:text-sm text-gray-400 mb-3">
                             {item.description}
                           </p>
-                          <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">
+                          <span className="inline-block px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs sm:text-sm font-medium">
                             {item.milestone}
                           </span>
                         </div>
                       </div>
                       {/* Dot Center */}
-                      <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-blue-600 rounded-full border-4 border-white shadow-lg"></div>
+                      <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white rounded-full border-4 border-gray-900 shadow-lg"></div>
                       {/* Empty Right */}
                       <div></div>
                     </>
@@ -476,20 +462,20 @@ export default function AboutUs() {
                       {/* Empty Left */}
                       <div></div>
                       {/* Dot Center */}
-                      <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-blue-600 rounded-full border-4 border-white shadow-lg"></div>
+                      <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white rounded-full border-4 border-gray-900 shadow-lg"></div>
                       {/* Content Right */}
                       <div>
-                        <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 inline-block">
-                          <div className="text-3xl font-bold text-blue-600 mb-2">
+                        <div className="bg-gray-950 rounded-xl p-4 sm:p-6 shadow-lg border border-gray-800 inline-block">
+                          <div className="text-2xl sm:text-3xl font-bold text-white mb-2">
                             {item.year}
                           </div>
-                          <h3 className="text-xl font-bold text-gray-900 mb-2">
+                          <h3 className="text-base sm:text-xl font-bold text-white mb-2">
                             {item.title}
                           </h3>
-                          <p className="text-gray-600 mb-3">
+                          <p className="text-xs sm:text-sm text-gray-400 mb-3">
                             {item.description}
                           </p>
-                          <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">
+                          <span className="inline-block px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs sm:text-sm font-medium">
                             {item.milestone}
                           </span>
                         </div>
@@ -504,38 +490,38 @@ export default function AboutUs() {
       </section>
 
       {/* Achievements Section */}
-      <section id="achievements" className="py-20">
+      <section id="achievements" className="py-12 sm:py-16 lg:py-20 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">
+          <div className="text-center mb-8 sm:mb-12">
+            <span className="text-gray-400 font-semibold text-xs sm:text-sm uppercase tracking-wide">
               Recognition
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mt-2 mb-3 sm:mb-4">
               Our Achievements
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto">
               Recognition and awards that validate our commitment to excellence
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {achievements.map((achievement, index) => {
               const Icon = achievement.icon;
               return (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-white to-blue-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-blue-100 group"
+                  className="bg-gray-900 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-800 hover:border-gray-700 group"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon className="w-7 h-7 text-white" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-800 rounded-lg flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                    <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                   </div>
-                  <div className="text-sm font-semibold text-blue-600 mb-2">
+                  <div className="text-xs sm:text-sm font-semibold text-gray-400 mb-2">
                     {achievement.year}
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-2">
                     {achievement.title}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-xs sm:text-sm text-gray-500">
                     {achievement.description}
                   </p>
                 </div>
@@ -546,39 +532,39 @@ export default function AboutUs() {
       </section>
 
       {/* Organization Structure */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-900 to-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">
+          <div className="text-center mb-8 sm:mb-12">
+            <span className="text-gray-400 font-semibold text-xs sm:text-sm uppercase tracking-wide">
               Structure
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mt-2 mb-3 sm:mb-4">
               How We're Organized
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto">
               Our team structure ensures efficient operations and meaningful
               impact
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {departments.map((dept, index) => {
               const Icon = dept.icon;
               return (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100"
+                  className="bg-gray-950 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-800 hover:border-gray-700"
                 >
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-blue-600" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-2">
                     {dept.name}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-4">
+                  <p className="text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4">
                     {dept.description}
                   </p>
-                  <div className="flex items-center space-x-2 text-sm text-blue-600 font-medium">
+                  <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-400 font-medium">
                     <Users className="w-4 h-4" />
                     <span>{dept.members} Members</span>
                   </div>
@@ -587,10 +573,10 @@ export default function AboutUs() {
             })}
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-8 sm:mt-12 text-center">
             <a
               href="/leadership"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-semibold shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-5 sm:px-6 py-2.5 sm:py-3 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-all font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base"
             >
               Meet Our Team
             </a>
@@ -599,25 +585,25 @@ export default function AboutUs() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white border-t border-gray-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
             Want to Be Part of Our Story?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 text-gray-300">
             Join BILF and contribute to shaping the future of student leadership
             in Bangladesh
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
               href="/join/apply"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-all font-bold shadow-xl hover:shadow-2xl"
+              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-all font-bold shadow-xl hover:shadow-2xl text-sm sm:text-base"
             >
               Apply for Membership
             </a>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white/10 transition-all font-bold backdrop-blur-sm"
+              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-700 text-white rounded-lg hover:bg-gray-800 transition-all font-bold backdrop-blur-sm text-sm sm:text-base"
             >
               Contact Us
             </a>

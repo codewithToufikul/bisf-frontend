@@ -58,12 +58,12 @@ const leadershipItems = [
 const joinItems = [
   {
     title: "Why Join BILF",
-    href: "/join/why",
+    href: "/join-us#benefits",
     description: "Benefits of membership",
   },
   {
     title: "Apply Now",
-    href: "/join/apply",
+    href: "/join-us#apply",
     description: "Start your application",
   },
 ];
@@ -100,8 +100,8 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 py-3 transition-all duration-300 ${
         scrolled 
-          ? "bg-gray-900/95 backdrop-blur-md shadow-2xl border-b border-gray-800" 
-          : "bg-gray-900/90 backdrop-blur-sm"
+          ? "bg-gray-900/80 backdrop-blur-md shadow-2xl border-b border-gray-800" 
+          : "bg-gray-900/80 backdrop-blur-md border-b border-gray-800"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -170,7 +170,7 @@ export function Navbar() {
               <span className="font-medium">Login</span>
             </Link>
             <Link
-              to="/join/apply"
+              to="/join-us#apply"
               className="px-5 py-2 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl font-medium"
             >
               Join Now
@@ -240,7 +240,7 @@ export function Navbar() {
                 <span className="font-medium">Admin Login</span>
               </Link>
               <Link
-                to="/join/apply"
+                to="/join-us"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center px-4 py-3 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-all font-medium shadow-lg"
               >
@@ -329,12 +329,13 @@ function MobileDropdown({
 }) {
   const isActive = activeDropdown === title;
 
-  const toggleDropdown = () => {
+  const toggleDropdown = (e) => {
+    e.stopPropagation();
     setActiveDropdown(isActive ? null : title);
   };
 
   return (
-    <div className="space-y-1">
+    <div className="space-y-1 dropdown-container">
       <button
         onClick={toggleDropdown}
         className="flex items-center justify-between w-full px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-all font-medium"

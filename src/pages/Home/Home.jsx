@@ -146,8 +146,7 @@ export default function Home() {
                 Bangladesh Intellectual Leaders Forum
               </h1>
               <p className="text-base sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-300">
-                Empowering minds, shaping futures, and building a community of
-                excellence
+                Bangladesh first and foremost!
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <a
@@ -235,7 +234,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 sm:py-16 bg-gray-950">
+      <section className="py-12 sm:py-16 bg-gray-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {stats.map((stat, index) => {
