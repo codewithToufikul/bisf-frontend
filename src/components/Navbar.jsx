@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, User, LogIn } from "lucide-react";
+import { Menu, X, ChevronDown, LogIn } from "lucide-react";
+import navLogo from "../../src/assets/BILF.webp";
 
 // Navigation data
 const aboutItems = [
@@ -97,20 +98,21 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-white/95 backdrop-blur-sm"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 py-3 transition-all duration-300 ${
+        scrolled 
+          ? "bg-gray-900/95 backdrop-blur-md shadow-2xl border-b border-gray-800" 
+          : "bg-gray-900/90 backdrop-blur-sm"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-              <span className="text-white font-bold text-xl">B</span>
-            </div>
+            <img className="w-16 group-hover:scale-105 transition-transform" src={navLogo} alt="BILF Logo" />
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-gray-900">BILF</h1>
-              <p className="text-xs text-gray-600">
-                Intellectual Students Forum
+              <h1 className="text-xl font-bold text-white">BILF</h1>
+              <p className="text-xs text-gray-400">
+                Intellectual Leaders Forum
               </p>
             </div>
           </Link>
@@ -120,7 +122,7 @@ export function Navbar() {
             {/* Home */}
             <Link
               to="/"
-              className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all font-medium"
+              className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all font-medium"
             >
               Home
             </Link>
@@ -152,7 +154,7 @@ export function Navbar() {
             {/* Contact */}
             <Link
               to="/contact"
-              className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all font-medium"
+              className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all font-medium"
             >
               Contact
             </Link>
@@ -162,14 +164,14 @@ export function Navbar() {
           <div className="hidden lg:flex items-center space-x-3">
             <Link
               to="/admin/login"
-              className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+              className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all border border-gray-700 hover:border-gray-600"
             >
               <LogIn className="w-4 h-4" />
               <span className="font-medium">Login</span>
             </Link>
             <Link
               to="/join/apply"
-              className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg font-medium"
+              className="px-5 py-2 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl font-medium"
             >
               Join Now
             </Link>
@@ -181,12 +183,12 @@ export function Navbar() {
               e.stopPropagation();
               setMobileMenuOpen(!mobileMenuOpen);
             }}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors mobile-menu"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors mobile-menu"
           >
             {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-gray-700" />
+              <X className="w-6 h-6 text-gray-300" />
             ) : (
-              <Menu className="w-6 h-6 text-gray-700" />
+              <Menu className="w-6 h-6 text-gray-300" />
             )}
           </button>
         </div>
@@ -194,7 +196,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg mobile-menu">
+        <div className="lg:hidden bg-gray-900 border-t border-gray-800 shadow-2xl mobile-menu">
           <div className="px-4 py-3 space-y-1 max-h-[calc(100vh-4rem)] overflow-y-auto">
             <MobileLink to="/" onClick={() => setMobileMenuOpen(false)}>
               Home
@@ -228,11 +230,11 @@ export function Navbar() {
               Contact
             </MobileLink>
 
-            <div className="pt-3 mt-3 border-t border-gray-200 space-y-2">
+            <div className="pt-3 mt-3 border-t border-gray-800 space-y-2">
               <Link
                 to="/admin/login"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center space-x-2 px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-all"
+                className="flex items-center space-x-2 px-4 py-3 text-gray-300 hover:bg-gray-800 rounded-lg transition-all border border-gray-700"
               >
                 <LogIn className="w-5 h-5" />
                 <span className="font-medium">Admin Login</span>
@@ -240,7 +242,7 @@ export function Navbar() {
               <Link
                 to="/join/apply"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-medium shadow-md"
+                className="flex items-center justify-center px-4 py-3 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-all font-medium shadow-lg"
               >
                 Join BILF Now
               </Link>
@@ -265,32 +267,34 @@ function DropdownMenu({ title, items, activeDropdown, setActiveDropdown }) {
     <div className="relative dropdown-container">
       <button
         onClick={handleClick}
-        className={`flex items-center space-x-1 px-4 py-2 rounded-lg transition-all font-medium ${isActive
-            ? "text-blue-600 bg-blue-50"
-            : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
-          }`}
+        className={`flex items-center space-x-1 px-4 py-2 rounded-lg transition-all font-medium ${
+          isActive
+            ? "text-white bg-gray-800"
+            : "text-gray-300 hover:text-white hover:bg-gray-800"
+        }`}
       >
         <span>{title}</span>
         <ChevronDown
-          className={`w-4 h-4 transition-transform ${isActive ? "rotate-180" : ""
-            }`}
+          className={`w-4 h-4 transition-transform ${
+            isActive ? "rotate-180" : ""
+          }`}
         />
       </button>
 
       {isActive && (
-        <div className="absolute top-full left-0 mt-1 w-72 bg-white rounded-lg shadow-xl border border-gray-100 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="absolute top-full left-0 mt-1 w-72 bg-gray-800 rounded-lg shadow-2xl border border-gray-700 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
           {items.map((item, index) => (
             <Link
               key={index}
               to={item.href}
-              className="block px-4 py-3 hover:bg-blue-50 transition-colors group"
+              className="block px-4 py-3 hover:bg-gray-700 transition-colors group"
               onClick={() => setActiveDropdown(null)}
             >
-              <div className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
+              <div className="font-medium text-white group-hover:text-gray-100 transition-colors">
                 {item.title}
               </div>
               {item.description && (
-                <div className="text-sm text-gray-500 mt-0.5">
+                <div className="text-sm text-gray-400 mt-0.5">
                   {item.description}
                 </div>
               )}
@@ -308,7 +312,7 @@ function MobileLink({ to, onClick, children }) {
     <Link
       to={to}
       onClick={onClick}
-      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-all font-medium"
+      className="block px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-all font-medium"
     >
       {children}
     </Link>
@@ -333,12 +337,13 @@ function MobileDropdown({
     <div className="space-y-1">
       <button
         onClick={toggleDropdown}
-        className="flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-all font-medium"
+        className="flex items-center justify-between w-full px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-all font-medium"
       >
         <span>{title}</span>
         <ChevronDown
-          className={`w-4 h-4 transition-transform ${isActive ? "rotate-180" : ""
-            }`}
+          className={`w-4 h-4 transition-transform ${
+            isActive ? "rotate-180" : ""
+          }`}
         />
       </button>
 
@@ -352,7 +357,7 @@ function MobileDropdown({
                 setActiveDropdown(null);
                 setMobileMenuOpen(false);
               }}
-              className="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+              className="block px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all"
             >
               <div className="font-medium">{item.title}</div>
               {item.description && (

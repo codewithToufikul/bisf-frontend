@@ -6,7 +6,7 @@ import { Outlet } from 'react-router'
 const Layout = () => {
   return (
     <div>
-        <div className='mb-16'>
+        <div className=''>
             <Navbar/>
         </div>
         <Outlet/>
