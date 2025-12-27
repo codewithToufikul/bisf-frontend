@@ -95,7 +95,7 @@ export default function JoinUsPage() {
     phone: "",
     university: "",
     department: "",
-    year: "",
+    yearOfStudy: "",
     address: "",
     whyJoin: "", // Acts as Bio
     expertise: [],
@@ -346,7 +346,7 @@ export default function JoinUsPage() {
                 phone: "",
                 university: "",
                 department: "",
-                year: "",
+                yearOfStudy: "",
                 address: "",
                 whyJoin: "",
                 expertise: [],
@@ -645,8 +645,8 @@ export default function JoinUsPage() {
                     Current Year/Semester *
                   </label>
                   <select
-                    name="year"
-                    value={formData.year}
+                    name="yearOfStudy"
+                    value={formData.yearOfStudy}
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl text-white focus:border-gray-600 focus:outline-none transition-colors"

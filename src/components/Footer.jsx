@@ -8,6 +8,7 @@ import {
   Twitter,
   Instagram,
 } from "lucide-react"
+import navLogo from "../../src/assets/BILF.webp";
 
 const Footer = () => {
   return (
@@ -15,7 +16,15 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">BILF</h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <img className="w-16 group-hover:scale-105 transition-transform" src={navLogo} alt="BILF Logo" />
+              <div>
+                <h3 className="text-xl font-bold">BILF</h3>
+                <p className="text-gray-400">
+                  Intellectual Leaders Forum
+                </p>
+              </div>
+            </div>
             <p className="text-gray-400 mb-4">
               Bangladesh Intellectual Students Forum - Empowering minds since
               2020
@@ -58,7 +67,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/about/who-we-are"
+                  href="/about-us#who-we-are"
                   className="hover:text-white transition-colors"
                 >
                   About Us
@@ -74,7 +83,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/join/apply"
+                  href="/join-us#apply"
                   className="hover:text-white transition-colors"
                 >
                   Join Us

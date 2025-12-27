@@ -44,10 +44,9 @@ export const MemberModal = ({ member, onClose, actions }) => {
 
             <div className="flex-1">
               <h2 className="text-3xl font-bold mb-2">{member.name}</h2>
-              <p className="text-xl text-gray-300 mb-2">
+              <p className="text-xl text-gray-300 mb-4">
                 {member.designation || "Member"}
               </p>
-              <p className="text-gray-400 mb-4">{member.category}</p>
 
               {member.expertise && (
                 <div className="flex flex-wrap gap-2">
@@ -75,14 +74,6 @@ export const MemberModal = ({ member, onClose, actions }) => {
             </div>
           )}
 
-          {member.whyJoin && (
-            <div>
-              <h3 className="text-xl font-bold text-white mb-3">Why Join</h3>
-              <p className="text-gray-400 leading-relaxed italic">
-                "{member.whyJoin}"
-              </p>
-            </div>
-          )}
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Education Block */}

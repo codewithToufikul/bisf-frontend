@@ -225,24 +225,22 @@ export default function AboutUs() {
               </h2>
               <div className="space-y-4 text-base sm:text-lg text-gray-400">
                 <p>
-                  The Bangladesh Intellectual Leaders Forum (BILF) was
-                  established in 2020 with a singular vision: to create a
-                  platform where the brightest minds of Bangladesh's student
-                  community could come together to learn, grow, and make a
-                  difference.
+                  The Bangladesh Intellectual Leaders Forum (BILF) is a premier
+                  organization dedicated to nurturing thoughtful, ethical, and
+                  forward-looking leaders who can contribute meaningfully to the
+                  nation and the global community. Our vision is to create a
+                  platform where ideas, knowledge, and values come together to
+                  inspire positive change.
                 </p>
                 <p>
-                  We believe that education extends beyond the classroom.
-                  Through our diverse programs, workshops, and initiatives, we
-                  provide opportunities for students to develop leadership
-                  skills, engage in meaningful research, and contribute to
-                  society.
-                </p>
-                <p>
-                  Today, BILF stands as one of Bangladesh's premier student
-                  organizations, with over 500 active members from 15+
-                  universities, united by a shared commitment to excellence and
-                  positive change.
+                  We are committed to identifying potential leaders,
+                  strengthening their intellectual capacity, and supporting
+                  their personal and professional growth through dialogue,
+                  learning, and collaboration. By fostering critical thinking,
+                  integrity, and social responsibility, we aim to develop
+                  leaders who are prepared to address challenges, serve society,
+                  and shape a more inclusive and sustainable future for
+                  Bangladesh.
                 </p>
               </div>
             </div>
@@ -256,19 +254,14 @@ export default function AboutUs() {
               </div>
               <div className="bg-gray-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-800">
                 <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">
-                  15+
+                  6+
                 </div>
                 <div className="text-xs sm:text-sm text-gray-400 font-medium">Universities</div>
               </div>
+
               <div className="bg-gray-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-800">
                 <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">
-                  50+
-                </div>
-                <div className="text-xs sm:text-sm text-gray-400 font-medium">Events Yearly</div>
-              </div>
-              <div className="bg-gray-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-800">
-                <div className="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">
-                  20+
+                  7+
                 </div>
                 <div className="text-xs sm:text-sm text-gray-400 font-medium">Awards Won</div>
               </div>
@@ -278,7 +271,10 @@ export default function AboutUs() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section id="mission-vision" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-900 to-gray-950">
+      <section
+        id="mission-vision"
+        className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-900 to-gray-950"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             {/* Mission */}
@@ -286,38 +282,44 @@ export default function AboutUs() {
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6">
                 <Target className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
+
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
                 Our Mission
               </h3>
+
               <p className="text-base sm:text-lg text-gray-400 mb-4 sm:mb-6">
-                To empower students through knowledge sharing, skill
-                development, and leadership opportunities, creating a vibrant
-                intellectual community that drives positive change in Bangladesh
-                and beyond.
+                The Bangladesh Intellectual Leaders Forum is dedicated to nurturing
+                thoughtful, ethical, and forward-looking leaders who can contribute
+                meaningfully to the nation and the global community. We strive to
+                create a platform where knowledge, ideas, and values unite to inspire
+                positive and lasting change.
               </p>
+
               <div className="space-y-3">
                 <div className="flex items-start space-x-3">
                   <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full" />
                   </div>
                   <p className="text-sm sm:text-base text-gray-400">
-                    Foster academic excellence and intellectual growth
+                    Identify and empower future leaders across Bangladesh
                   </p>
                 </div>
+
                 <div className="flex items-start space-x-3">
                   <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full" />
                   </div>
                   <p className="text-sm sm:text-base text-gray-400">
-                    Develop future leaders and change-makers
+                    Strengthen intellectual capacity through learning and dialogue
                   </p>
                 </div>
+
                 <div className="flex items-start space-x-3">
                   <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full" />
                   </div>
                   <p className="text-sm sm:text-base text-gray-400">
-                    Build bridges between universities and communities
+                    Encourage integrity, responsibility, and ethical leadership
                   </p>
                 </div>
               </div>
@@ -328,38 +330,44 @@ export default function AboutUs() {
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6">
                 <Eye className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
+
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
                 Our Vision
               </h3>
+
               <p className="text-base sm:text-lg text-gray-400 mb-4 sm:mb-6">
-                To be Bangladesh's leading intellectual platform, recognized
-                nationally and internationally for nurturing brilliant minds,
-                fostering innovation, and contributing to society's advancement
-                through education and leadership.
+                Our vision is to become a leading intellectual platform that nurtures
+                socially responsible, knowledgeable, and visionary leaders for
+                Bangladesh and the world. By fostering critical thinking, moral
+                values, and collaboration, we aim to shape a more inclusive,
+                sustainable, and enlightened future.
               </p>
+
               <div className="space-y-3">
                 <div className="flex items-start space-x-3">
                   <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full" />
                   </div>
                   <p className="text-sm sm:text-base text-gray-400">
-                    Create lasting impact on Bangladesh's education landscape
+                    Build a nationwide network of ethical and capable leaders
                   </p>
                 </div>
+
                 <div className="flex items-start space-x-3">
                   <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full" />
                   </div>
                   <p className="text-sm sm:text-base text-gray-400">
-                    Establish global partnerships and collaborations
+                    Promote meaningful collaboration and knowledge-sharing
                   </p>
                 </div>
+
                 <div className="flex items-start space-x-3">
                   <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full" />
                   </div>
                   <p className="text-sm sm:text-base text-gray-400">
-                    Be the catalyst for student-driven social innovation
+                    Inspire student-driven innovation for social good
                   </p>
                 </div>
               </div>
@@ -367,6 +375,7 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+
 
       {/* Core Values Section */}
       <section id="value-section" className="py-12 sm:py-16 lg:py-20 bg-gray-950">

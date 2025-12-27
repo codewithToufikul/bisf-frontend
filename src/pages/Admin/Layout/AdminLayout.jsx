@@ -6,7 +6,8 @@ import {
     LogOut,
     Menu,
     X,
-    FileText
+    FileText,
+    Home
 } from "lucide-react";
 
 export default function AdminLayout() {
@@ -43,6 +44,11 @@ export default function AdminLayout() {
             icon: Users,
             path: "/admin/members",
         },
+        {
+            title: "Website Home",
+            icon: Home,
+            path: "/",
+        },
     ];
 
     if (!token) return null;
@@ -77,8 +83,8 @@ export default function AdminLayout() {
                                 to={item.path}
                                 onClick={() => setSidebarOpen(false)}
                                 className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${isActive
-                                        ? "bg-gray-800 text-white"
-                                        : "text-gray-400 hover:bg-gray-800/50 hover:text-white"
+                                    ? "bg-gray-800 text-white"
+                                    : "text-gray-400 hover:bg-gray-800/50 hover:text-white"
                                     }`}
                             >
                                 <Icon className="w-5 h-5" />
@@ -103,14 +109,23 @@ export default function AdminLayout() {
             <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
                 {/* Topbar */}
                 <header className="h-16 bg-gray-900 border-b border-gray-800 flex items-center justify-between px-4 lg:px-8">
-                    <button
-                        onClick={() => setSidebarOpen(true)}
-                        className="lg:hidden p-2 text-gray-400 hover:text-white"
-                    >
-                        <Menu className="w-6 h-6" />
-                    </button>
+                    <div className="flex items-center">
+                        <button
+                            onClick={() => setSidebarOpen(true)}
+                            className="lg:hidden p-2 text-gray-400 hover:text-white"
+                        >
+                            <Menu className="w-6 h-6" />
+                        </button>
+                        <Link to="/" className="hidden lg:flex items-center space-x-2 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-md transition-all text-sm font-medium">
+                            <Home className="w-4 h-4" />
+                            <span>View Site</span>
+                        </Link>
+                    </div>
 
                     <div className="flex items-center space-x-4">
+                        <Link to="/" className="lg:hidden text-gray-400 hover:text-white">
+                            <Home className="w-6 h-6" />
+                        </Link>
                         <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white font-bold">
                             A
                         </div>

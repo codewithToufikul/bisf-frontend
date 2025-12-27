@@ -7,6 +7,8 @@ import Layout from "@/pages/Layout/Layout";
 import LeadershipPage from "@/pages/Leadership/Leadership";
 import JoinUsPage from "@/pages/JoinUs/JoinUs";
 import Contact from "@/pages/Contact/Contact";
+import AdminMembers from "@/pages/Admin/AdminMembers";
+
 import AdminLogin from "@/pages/Admin/Login";
 import AdminLayout from "@/pages/Admin/Layout/AdminLayout";
 import Dashboard from "@/pages/Admin/Dashboard/Dashboard";
@@ -54,7 +56,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "members",
-        element: <div className="text-white">Members (Coming Soon)</div>,
+        element: <AdminMembers />,
       },
     ],
   },

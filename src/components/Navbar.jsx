@@ -32,28 +32,6 @@ const aboutItems = [
   },
 ];
 
-const leadershipItems = [
-  {
-    title: "Executive Committee",
-    href: "/leadership",
-    description: "Meet our leadership team",
-  },
-  {
-    title: "Advisory Board",
-    href: "/leadership/advisory",
-    description: "Our trusted advisors",
-  },
-  {
-    title: "Department Heads",
-    href: "/leadership/departments",
-    description: "Department coordinators",
-  },
-  {
-    title: "All Members",
-    href: "/leadership",
-    description: "View complete member directory",
-  },
-];
 
 const joinItems = [
   {
@@ -98,18 +76,17 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 py-3 transition-all duration-300 ${
-        scrolled 
-          ? "bg-gray-900/80 backdrop-blur-md shadow-2xl border-b border-gray-800" 
+      className={`fixed top-0 left-0 right-0 z-50 py-3 transition-all duration-300 ${scrolled
+          ? "bg-gray-900/80 backdrop-blur-md shadow-2xl border-b border-gray-800"
           : "bg-gray-900/80 backdrop-blur-md border-b border-gray-800"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <img className="w-16 group-hover:scale-105 transition-transform" src={navLogo} alt="BILF Logo" />
-            <div className="hidden sm:block">
+            <div className="">
               <h1 className="text-xl font-bold text-white">BILF</h1>
               <p className="text-xs text-gray-400">
                 Intellectual Leaders Forum
@@ -134,15 +111,12 @@ export function Navbar() {
               activeDropdown={activeDropdown}
               setActiveDropdown={setActiveDropdown}
             />
-
-            {/* Leadership Dropdown */}
-            <DropdownMenu
-              title="Leadership"
-              items={leadershipItems}
-              activeDropdown={activeDropdown}
-              setActiveDropdown={setActiveDropdown}
-            />
-
+            <Link
+              to="/leadership"
+              className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all font-medium"
+            >
+              Leadership
+            </Link>
             {/* Join Us Dropdown */}
             <DropdownMenu
               title="Join Us"
@@ -210,14 +184,9 @@ export function Navbar() {
               setMobileMenuOpen={setMobileMenuOpen}
             />
 
-            <MobileDropdown
-              title="Leadership"
-              items={leadershipItems}
-              activeDropdown={activeDropdown}
-              setActiveDropdown={setActiveDropdown}
-              setMobileMenuOpen={setMobileMenuOpen}
-            />
-
+            <MobileLink to="/leadership" onClick={() => setMobileMenuOpen(false)}>
+              Leadership
+            </MobileLink>
             <MobileDropdown
               title="Join Us"
               items={joinItems}
@@ -267,17 +236,15 @@ function DropdownMenu({ title, items, activeDropdown, setActiveDropdown }) {
     <div className="relative dropdown-container">
       <button
         onClick={handleClick}
-        className={`flex items-center space-x-1 px-4 py-2 rounded-lg transition-all font-medium ${
-          isActive
+        className={`flex items-center space-x-1 px-4 py-2 rounded-lg transition-all font-medium ${isActive
             ? "text-white bg-gray-800"
             : "text-gray-300 hover:text-white hover:bg-gray-800"
-        }`}
+          }`}
       >
         <span>{title}</span>
         <ChevronDown
-          className={`w-4 h-4 transition-transform ${
-            isActive ? "rotate-180" : ""
-          }`}
+          className={`w-4 h-4 transition-transform ${isActive ? "rotate-180" : ""
+            }`}
         />
       </button>
 
@@ -342,9 +309,8 @@ function MobileDropdown({
       >
         <span>{title}</span>
         <ChevronDown
-          className={`w-4 h-4 transition-transform ${
-            isActive ? "rotate-180" : ""
-          }`}
+          className={`w-4 h-4 transition-transform ${isActive ? "rotate-180" : ""
+            }`}
         />
       </button>
 

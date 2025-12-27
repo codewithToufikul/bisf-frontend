@@ -37,12 +37,12 @@ export default function LeadershipPage() {
     fetchMembers();
   }, []);
 
-  const categories = [
-    "All",
-    "Executive Committee",
-    "Department Heads",
-    "Advisory Board",
-  ];
+//   const categories = [
+//     "All",
+//     "Executive Committee",
+//     "Department Heads",
+//     "Advisory Board",
+//   ];
 
   const filteredMembers = members.filter((member) => {
     const matchesSearch =
@@ -56,7 +56,7 @@ export default function LeadershipPage() {
   return (
     <div className="min-h-screen bg-gray-950">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 sm:py-20 lg:py-34 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-28 lg:py-34 overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div
             className="absolute inset-0"
@@ -75,7 +75,7 @@ export default function LeadershipPage() {
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
               Meet the dedicated individuals who guide and inspire BILF's mission
-              to empower students across Bangladesh
+              to empower students across Globe.
             </p>
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function LeadershipPage() {
                 className="w-full pl-12 pr-4 py-3 bg-gray-900 border-2 border-gray-800 rounded-xl text-white placeholder-gray-500 focus:border-gray-700 focus:outline-none transition-colors"
               />
             </div>
-            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
+            {/* <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
               {categories.map((category) => (
                 <button
                   key={category}
@@ -121,7 +121,7 @@ export default function LeadershipPage() {
                   {category}
                 </button>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
