@@ -364,7 +364,7 @@ export default function Home() {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-48 sm:h-56 lg:h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-48 sm:h-56 lg:h-64 object-top object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
