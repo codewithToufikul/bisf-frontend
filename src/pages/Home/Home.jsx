@@ -146,7 +146,7 @@ export default function Home() {
             <div className="text-center lg:text-left">
               <div className="inline-block mb-4 sm:mb-6">
                 <span className="px-3 sm:px-4 py-2 bg-gray-800/80 border border-gray-700 rounded-full text-xs sm:text-sm font-medium backdrop-blur-sm">
-                  Est. 2020 | Leading Student Organization
+                  Est. 2025 | Leading Student Organization
                 </span>
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
