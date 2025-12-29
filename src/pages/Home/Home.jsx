@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from 'axios';
+import axios from "axios";
 import {
   ArrowRight,
   Users,
@@ -19,25 +19,29 @@ import {
   Globe,
   Lightbulb,
   Zap,
-  Rocket
+  Rocket,
 } from "lucide-react";
+import { MemberModal } from "@/components/MemberModal";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [featuredMembers, setFeaturedMembers] = useState([]);
   const [loadingMembers, setLoadingMembers] = useState(true);
+  const [selectedMember, setSelectedMember] = useState(null);
 
   useEffect(() => {
     const fetchFeaturedMembers = async () => {
       try {
-        // Using logic: Fetch all, but since there's no specific "featured" endpoint yet, 
+        // Using logic: Fetch all, but since there's no specific "featured" endpoint yet,
         // we fetch all and filter client-side or we rely on the getAllMembers to return them.
         // As per prev instructions: "sudhu matro homepagesho true members data gula e dekhabe"
         // The API /api/members returns active members. We filter here.
-        const response = await axios.get('https://bisf-server.onrender.com/api/members');
+        const response = await axios.get("https://bisf-server.onrender.com/api/members");
         if (response.data.success) {
           const allMembers = response.data.data;
-          const homepageMembers = allMembers.filter(member => member.homepageshow === true);
+          const homepageMembers = allMembers.filter(
+            (member) => member.homepageshow === true
+          );
           setFeaturedMembers(homepageMembers);
         }
       } catch (error) {
@@ -61,25 +65,28 @@ export default function Home() {
   const focusAreas = [
     {
       title: "Intellectual Growth",
-      description: "Fostering a culture of research, critical thinking, and academic excellence among student leaders.",
+      description:
+        "Fostering a culture of research, critical thinking, and academic excellence among student leaders.",
       icon: Lightbulb,
       color: "from-blue-500/20 to-blue-600/20",
-      iconColor: "text-blue-500"
+      iconColor: "text-blue-500",
     },
     {
       title: "Leadership Excellence",
-      description: "Equipping members with the skills and mindset needed to lead complex organizations and initiatives.",
+      description:
+        "Equipping members with the skills and mindset needed to lead complex organizations and initiatives.",
       icon: Zap,
       color: "from-amber-500/20 to-amber-600/20",
-      iconColor: "text-amber-500"
+      iconColor: "text-amber-500",
     },
     {
       title: "Global Impact",
-      description: "Connecting local talent with international platforms to drive meaningful change on a global scale.",
+      description:
+        "Connecting local talent with international platforms to drive meaningful change on a global scale.",
       icon: Globe,
       color: "from-emerald-500/20 to-emerald-600/20",
-      iconColor: "text-emerald-500"
-    }
+      iconColor: "text-emerald-500",
+    },
   ];
 
   // Why join reasons
@@ -283,7 +290,13 @@ export default function Home() {
                 inspire positive change.
               </p>
               <p className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8">
-                We are committed to identifying potential leaders, strengthening their intellectual capacity, and supporting their personal and professional growth through dialogue, learning, and collaboration. By fostering critical thinking, integrity, and social responsibility, we aim to develop leaders who are prepared to address challenges, serve society, and shape a more inclusive and sustainable future for Bangladesh.
+                We are committed to identifying potential leaders, strengthening
+                their intellectual capacity, and supporting their personal and
+                professional growth through dialogue, learning, and
+                collaboration. By fostering critical thinking, integrity, and
+                social responsibility, we aim to develop leaders who are
+                prepared to address challenges, serve society, and shape a more
+                inclusive and sustainable future for Bangladesh.
               </p>
               <a
                 href="/about/who-we-are"
@@ -358,6 +371,7 @@ export default function Home() {
               {featuredMembers.slice(0, 4).map((member, index) => (
                 <div
                   key={index}
+                  onClick={() => setSelectedMember(member)}
                   className="bg-gray-900 rounded-xl lg:rounded-2xl overflow-hidden border border-gray-800 hover:border-gray-700 shadow-xl hover:shadow-2xl transition-all group cursor-pointer w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-24px)]"
                 >
                   <div className="relative overflow-hidden">
@@ -384,7 +398,9 @@ export default function Home() {
             </div>
           ) : (
             <div className="text-center text-gray-500 py-10">
-              {loadingMembers ? "Loading members..." : "No featured members found."}
+              {loadingMembers
+                ? "Loading members..."
+                : "No featured members found."}
             </div>
           )}
 
@@ -399,6 +415,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <MemberModal
+        member={selectedMember}
+        onClose={() => setSelectedMember(null)}
+      />
 
       {/* Why Join Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gray-950">
@@ -451,7 +472,8 @@ export default function Home() {
               Our Strategic Focus
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto">
-              We concentrate our efforts on these core pillars to ensure holistic development for all our members
+              We concentrate our efforts on these core pillars to ensure
+              holistic development for all our members
             </p>
           </div>
 
@@ -463,9 +485,13 @@ export default function Home() {
                   key={index}
                   className="group relative bg-gray-950 rounded-2xl p-8 border border-gray-800 hover:border-gray-700 transition-all duration-300"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${area.color} opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl`}></div>
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${area.color} opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl`}
+                  ></div>
                   <div className="relative">
-                    <div className={`w-14 h-14 rounded-xl bg-gray-900 border border-gray-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${area.iconColor}`}>
+                    <div
+                      className={`w-14 h-14 rounded-xl bg-gray-900 border border-gray-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${area.iconColor}`}
+                    >
                       <Icon className="w-7 h-7" />
                     </div>
                     <h3 className="text-xl font-bold text-white mb-4">

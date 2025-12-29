@@ -589,7 +589,7 @@ export default function JoinUsPage() {
                     placeholder="+880 1XXX-XXXXXX"
                   />
                 </div>
-                <div>
+                {/* <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
                     Address
                   </label>
@@ -601,7 +601,7 @@ export default function JoinUsPage() {
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:border-gray-600 focus:outline-none transition-colors"
                     placeholder="Your city/area"
                   />
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -640,7 +640,7 @@ export default function JoinUsPage() {
                     placeholder="Your department"
                   />
                 </div>
-                <div className="sm:col-span-2">
+                {/* <div className="sm:col-span-2">
                   <label className="block text-sm font-medium text-gray-300 mb-2">
                     Current Year/Semester *
                   </label>
@@ -660,7 +660,7 @@ export default function JoinUsPage() {
                     <option value="PhD">PhD</option>
                     <option value="Graduate">Graduate</option>
                   </select>
-                </div>
+                </div> */}
               </div>
             </div>
 

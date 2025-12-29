@@ -116,12 +116,12 @@ export const MemberModal = ({ member, onClose, actions }) => {
                   <span className="text-white font-medium text-red-400">{member.bloodGroup}</span>
                 </div>
               )}
-              {member.presentAddress && (
+              {/* {member.presentAddress && (
                 <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700 md:col-span-2">
                   <span className="text-gray-500 text-sm block mb-1">Present Address</span>
                   <span className="text-gray-300 text-sm">{member.presentAddress}</span>
                 </div>
-              )}
+              )} */}
             </div>
           )}
 
